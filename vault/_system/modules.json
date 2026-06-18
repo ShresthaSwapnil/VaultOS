@@ -1,0 +1,59 @@
+{
+  "modules": [
+    {
+      "id": "aqua-farm",
+      "name": "Aqua Farm",
+      "icon": "🐟",
+      "color": "#14b8a6",
+      "description": "Aquatic plant farming & fish breeding",
+      "subfolders": [
+        "setup-logs",
+        "water-tests",
+        "breeding-cycles"
+      ],
+      "features": [
+        "photo-gallery",
+        "alerts"
+      ],
+      "createdAt": "2026-06-13",
+      "status": "active"
+    },
+    {
+      "id": "phone-business",
+      "name": "Phone Business",
+      "icon": "📱",
+      "color": "#f59e0b",
+      "description": "Smartphone trading & market research",
+      "subfolders": [
+        "market-research",
+        "deals",
+        "inventory"
+      ],
+      "features": [
+        "deal-tracker",
+        "market-data"
+      ],
+      "createdAt": "2026-06-13",
+      "status": "active"
+    },
+    {
+      "id": "content-factory",
+      "name": "Content Factory",
+      "icon": "🎬",
+      "color": "#a855f7",
+      "description": "YouTube, Facebook, Instagram content pipeline",
+      "subfolders": [
+        "youtube",
+        "facebook",
+        "instagram",
+        "scripts"
+      ],
+      "features": [
+        "content-pipeline",
+        "calendar-overlay"
+      ],
+      "createdAt": "2026-06-13",
+      "status": "active"
+    }
+  ]
+}
