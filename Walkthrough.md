@@ -45,3 +45,8 @@ We have completed all implementation phases for **VaultOS** — a premium, local
 2. **TypeScript**: Fully typed and check completed.
 3. **Database Integration**: Set up SQLite (`vaultos.db`) in WAL mode with robust transaction handling and busy timeout configurations to prevent concurrency failures.
 4. **Unified Process Runner**: Created `dev-runner.js` to concurrently spawn all dependencies (`Next.js`, `Sidecar`, `n8n`, `OpenClaw`) with colored console logging prefixing and aggregate PID signal trapping for clean graceful terminations on CTRL+C. Integrated as the default `npm run dev` handler.
+5. **Cross-Platform Compatibility**:
+   *   **Adaptive Sidecar Binary Resolution**: The process runner automatically detects the OS type and resolves the virtual interpreter path dynamically (`.venv\Scripts\python.exe` on Windows vs `.venv/bin/python` on macOS/Linux).
+   *   **Path Slash Normalization**: Modified relative path operations inside `vault.ts` to replace Windows backslashes (`\`) with forward slashes (`/`), preventing file row parsing or retrieval failures in the UI.
+
+---

@@ -138,9 +138,12 @@ async function runAll() {
       `${colors.sidecar}[Sidecar] Already running on port 8001. Skipping startup.${colors.reset}`,
     );
   } else {
-    const sidecarPython = `"${path.resolve(__dirname, "sidecar", ".venv", "bin", "python")}"`;
-    const sidecarScript = `"${path.resolve(__dirname, "sidecar", "main.py")}"`;
-    startService("Sidecar", colors.sidecar, sidecarPython, [sidecarScript]);
+    // 3. Start Python Sidecar (virtual environment interpreter)
+    const isWindows = process.platform === 'win32';
+    const pythonRelativePath = isWindows ? ['sidecar', '.venv', 'Scripts', 'python.exe'] : ['sidecar', '.venv', 'bin', 'python'];
+    const sidecarPython = `"${path.resolve(__dirname, ...pythonRelativePath)}"`;
+    const sidecarScript = `"${path.resolve(__dirname, 'sidecar', 'main.py')}"`;
+    startService('Sidecar', colors.sidecar, sidecarPython, [sidecarScript]);
   }
 
   // 4. Next.js Web App

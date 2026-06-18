@@ -89,9 +89,17 @@ N8N_API_URL=http://127.0.0.1:5678
 
 ### 2. Setup Python Virtual Environment
 Initialize and install the FastAPI sidecar dependencies:
+
+**🍎 macOS / Linux**:
 ```bash
 python3 -m venv sidecar/.venv
 ./sidecar/.venv/bin/pip install -r sidecar/requirements.txt
+```
+
+**🪟 Windows**:
+```powershell
+python -m venv sidecar\.venv
+.\sidecar\.venv\Scripts\pip.exe install -r sidecar\requirements.txt
 ```
 
 ---

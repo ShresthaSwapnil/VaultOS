@@ -126,7 +126,7 @@ export function searchVault(query: string): SearchResult[] {
 
     for (const file of files) {
       const fullPath = path.join(currentDir, file);
-      const relativePath = path.relative(config.vaultPath, fullPath);
+      const relativePath = path.relative(config.vaultPath, fullPath).replace(/\\/g, '/');
 
       // Skip internal folders and media
       if (file.startsWith('.') || relativePath.startsWith('_media') || file === '_system') {
@@ -185,7 +185,7 @@ export function listDirectoryFiles(relativeDirPath: string): string[] {
       if (stat.isDirectory()) {
         traverse(fullPath);
       } else {
-        results.push(path.relative(config.vaultPath, fullPath));
+        results.push(path.relative(config.vaultPath, fullPath).replace(/\\/g, '/'));
       }
     }
   }
